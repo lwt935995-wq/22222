@@ -1,0 +1,315 @@
+/* ============================================================================
+   AR Gesture Canvas - Styling
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Courier New', monospace;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================================================
+   Canvas Layers
+   ============================================================================ */
+
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.main-canvas {
+    z-index: 1;
+}
+
+.portal-canvas {
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ============================================================================
+   Control Panel - Matrix Style Terminal
+   ============================================================================ */
+
+.control-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 320px;
+    background: rgba(0, 20, 40, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.3),
+        inset 0 0 20px rgba(0, 255, 0, 0.05);
+    font-size: 13px;
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.control-panel h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #00ff00, #00cc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.control-panel p {
+    font-size: 11px;
+    opacity: 0.8;
+    margin: 4px 0;
+}
+
+/* ============================================================================
+   Status Display
+   ============================================================================ */
+
+.panel-header {
+    border-bottom: 1px solid #00ff00;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.status-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #00ff00;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================================================
+   Control Groups
+   ============================================================================ */
+
+.control-group {
+    margin: 12px 0;
+}
+
+.control-group label {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* ============================================================================
+   Select & Button Styling
+   ============================================================================ */
+
+.filter-select {
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 50, 100, 0.8);
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:hover {
+    background: rgba(0, 100, 150, 0.9);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.filter-select:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+}
+
+.filter-select option {
+    background: #001a2e;
+    color: #00ff00;
+}
+
+.debug-button {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 100, 150, 0.7);
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.debug-button:hover {
+    background: rgba(0, 150, 200, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.debug-button:active {
+    transform: scale(0.98);
+}
+
+/* ============================================================================
+   Info Panel
+   ============================================================================ */
+
+.info-panel {
+    margin-top: 16px;
+    padding: 12px;
+    background: rgba(0, 30, 60, 0.6);
+    border: 1px dashed #00ff00;
+    border-radius: 4px;
+}
+
+.info-text {
+    font-size: 11px;
+    margin: 4px 0;
+    color: #00ff00;
+}
+
+/* ============================================================================
+   Instructions
+   ============================================================================ */
+
+.instructions {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #00ff00;
+    font-size: 10px;
+}
+
+.instructions h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00ccff;
+}
+
+.instructions ol {
+    margin-left: 16px;
+    line-height: 1.6;
+}
+
+.instructions li {
+    margin: 4px 0;
+    color: #00ff00;
+}
+
+.instructions strong {
+    color: #ffff00;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .control-panel {
+        width: 280px;
+        font-size: 12px;
+        padding: 16px;
+    }
+    
+    .control-panel h1 {
+        font-size: 14px;
+    }
+    
+    .instructions {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .control-panel {
+        width: 240px;
+        font-size: 11px;
+        padding: 12px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .control-panel h1 {
+        font-size: 13px;
+    }
+    
+    .instructions ol {
+        margin-left: 12px;
+    }
+    
+    .instructions {
+        display: none;
+    }
+}
+
+/* ============================================================================
+   Performance Indicators
+   ============================================================================ */
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    }
+}
+
+/* ============================================================================
+   Scrollbar Styling
+   ============================================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.7);
+}
