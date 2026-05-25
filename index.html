@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Gesture Canvas - AR Multiverse Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Video Canvas (Background) -->
+        <canvas id="mainCanvas" class="canvas main-canvas"></canvas>
+        
+        <!-- Portal Overlay Canvas -->
+        <canvas id="portalCanvas" class="canvas portal-canvas"></canvas>
+        
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="panel-header">
+                <h1>AR Portal</h1>
+                <p class="status-text" id="status">Initializing...</p>
+            </div>
+            
+            <!-- FPS Monitor -->
+            <div class="info-panel">
+                <p class="info-text" id="fps">FPS: 0</p>
+            </div>
+            
+            <!-- Filter Selection -->
+            <div class="control-group">
+                <label for="filterSelect">Filter Effect</label>
+                <select id="filterSelect" class="filter-select">
+                    <option value="emoji">🌕 Emoji Art (Moon)</option>
+                    <option value="heart">💖 Heart Vibe</option>
+                    <option value="ascii">📟 ASCII Art</option>
+                    <option value="glitch">⚡ Glitch Art</option>
+                    <option value="crt">📺 CRT Monitor</option>
+                    <option value="pointcloud">🌌 Point Cloud</option>
+                </select>
+            </div>
+            
+            <!-- Debug Mode -->
+            <div class="control-group">
+                <button id="debugToggle" class="debug-button">🔍 Debug Mode (OFF)</button>
+            </div>
+            
+            <!-- Instructions -->
+            <div class="instructions">
+                <h3>How to Use:</h3>
+                <ol>
+                    <li>Allow <strong>webcam</strong> access</li>
+                    <li>Make <strong>pinch gesture</strong> with <strong>both hands</strong></li>
+                    <li><strong>Drag</strong> to stretch portal</li>
+                    <li>Switch filters with dropdown</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MediaPipe Hands Library -->
+    <script async src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.4.1642516936/camera_utils.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.4.1642516936/drawing_utils.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1642516936/hands.js"></script>
+    
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
